@@ -2,8 +2,7 @@ const chatForm = get('form');
 const chatInput = get('input');
 const chatBox = get('main');
 
-appendMessage('bot', 'This is a bot bubble');
-appendMessage('user', 'This is a user bubble');
+appendMessage('bot', 'Hello, I am MediBot. I am here to assist you in finding help for your medical problems. What symptoms are you experiencing?');
 
 chatForm.addEventListener('submit', event => {
   event.preventDefault();
@@ -13,14 +12,16 @@ chatForm.addEventListener('submit', event => {
   appendMessage('user', text);
   chatInput.value = '';
 
+  const prompt = text
+
   query({
-    "inputs": text,
+    "inputs": prompt,
     "parameters": {
-      "model": "medalpaca/medalpaca-7b",
-      "tokenizer": "medalpaca/medalpaca-7b"
+      "top_k": 1
     }
   }).then((response) => {
     console.log(response)
+    console.log(response[0].generated_text)
   });
   
 });
@@ -55,9 +56,9 @@ async function query(data) {
 	return result;
 }
 
-query({
-    "inputs": "This is the text sent to the model",
-    "parameters": {}
-}).then((response) => {
-	console.log(JSON.stringify(response));
-});
+// query({
+//     "inputs": "This is the text sent to the model",
+//     "parameters": {}
+// }).then((response) => {
+// 	console.log(JSON.stringify(response));
+// });
