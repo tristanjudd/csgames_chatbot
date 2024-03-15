@@ -20,8 +20,7 @@ chatForm.addEventListener('submit', event => {
       "top_k": 1
     }
   }).then((response) => {
-    console.log(response)
-    console.log(response[0].generated_text)
+    appendMessage('bot', response[0].generated_text)
   });
   
 });
