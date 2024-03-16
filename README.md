@@ -1,4 +1,9 @@
 CS Games chatbot challenge <br />
+
+Team: Code-Blooded
+
+Execution: simply open the index.html file in a Chrome browser and interact with the chatbot! 
+
 <br />
 User story 1 :<br />
 Chatbot says : Hello, I am MediBot. I am here to assist you in finding help for your medical problems. What symptoms are you experiencing?<br />
