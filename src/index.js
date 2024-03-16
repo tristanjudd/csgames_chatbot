@@ -1,9 +1,9 @@
 const chatForm = get('form');
 const chatInput = get('input');
 const chatBox = get('main');
-
+let botresp
 appendMessage('bot', 'Hello, I am MediBot. I am here to assist you in finding help for your medical problems. What symptoms are you experiencing?');
-
+let memory = 'context : You are a medical assistant chatbot and your role is to help diagnose the user or pass them on to a doctor.\nHere is a message history of your conversation :\nYou Said : Hello, I am MediBot. I am here to assist you in finding help for your medical problems. What symptoms are you experiencing?\n'
 chatForm.addEventListener('submit', event => {
   event.preventDefault();
   const text = chatInput.value;
@@ -12,16 +12,21 @@ chatForm.addEventListener('submit', event => {
   appendMessage('user', text);
   chatInput.value = '';
 
-  const prompt = text
 
   query({
-    "inputs": prompt,
+    "inputs": memory + 'Here Is the user\'s next message you have to respond to : ' + text + '.\nYour response to the user : ',
     "parameters": {
       "top_k": 1
     }
   }).then((response) => {
-    appendMessage('bot', response[0].generated_text)
+    console.log(response)
+    console.log(response[0].generated_text)
+    botresp = response[0].generated_text
+    appendMessage('bot', botresp)
+    memory += 'The user said : '+text + '.\nYou responded : ' + botresp + '.\n'
+    console.log(memory);
   });
+  
   
 });
 
