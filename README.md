@@ -13,3 +13,10 @@ chatbot's response : 😊 You too, have a great day!.
 
 
 User story 2 :
+Chatbot says : Hello, I am MediBot. I am here to assist you in finding help for your medical problems. What symptoms are you experiencing?
+The user said : my foot hurts.
+chatbot's response : I am sorry to hear that. Can you tell me more about your symptoms?.
+The user said : yeah it was leg day yesterday and now my muscles are sore, should I go to the doctor for that ?.
+chatbot's response : 💬 I understand. It is possible that your muscle soreness is due to overexertion. However, it is always best to consult a doctor to rule out any other possible causes. 💬.
+The user said : okay thank you.
+chatbot's response : 💬 You're welcome. I hope you feel better soon. 💬.
