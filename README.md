@@ -1,5 +1,7 @@
 CS Games chatbot challenge <br />
 
+GitHub Repo Link: https://github.com/tristanjudd/csgames_chatbot
+
 Team: Code-Blooded
 
 Execution: simply open the index.html file in a Chrome browser and interact with the chatbot! 
